@@ -6,5 +6,29 @@
       <h2>SolutionWeb</h2>
       <h1>SolutionWeb / <%= title %></h1>
     </div>
+    <section id="feed-post">
+      <h4>Post</h4>
+      <form action="/posts/create" id="new-post-form" method="POST">
+        <textarea
+          name="content"
+          id=""
+          cols="30"
+          rows="4"
+          placeholder="Type Here...."
+        ></textarea>
+        <input type="submit" value="Post" />
+      </form>
+    </section>
+    <div id="post-list-container">
+      <ul>
+        <% for(post of posts){%>
+        <li>
+          <%= post.content %>
+          <br />
+          <small> <%= post.user.name %></small>
+        </li>
+        <%}%>
+      </ul>
+    </div>
   </div>
 </div>
