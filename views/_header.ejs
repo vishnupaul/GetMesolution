@@ -16,7 +16,7 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarColor02">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav me-auto">
         <li class="nav-item">
           <a class="nav-link active" href="#" data-ol-has-click-handler=""
             >Home
@@ -24,7 +24,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" data-ol-has-click-handler="">About Us</a>
+          <a class="nav-link" href="#" data-ol-has-click-handler="">Features</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#" data-ol-has-click-handler="">Pricing</a>
@@ -33,10 +33,23 @@
           <a class="nav-link" href="#" data-ol-has-click-handler="">About</a>
         </li>
       </ul>
-
-      <a href="/users/sign-in" class="btn btn-primary btn-block ms-auto"
-        >Login</a
-      >
+      <div class="d-flex">
+        <% if (locals.user){ %>
+        <a class="nav-link" href="/users/profile" data-ol-has-click-handler=""
+          ><%=user.name %></a
+        >
+        <a href="/users/sign-out" class="btn btn-primary btn-block ms-auto"
+          >Sign Out</a
+        >
+        <% }else { %>
+        <a href="/users/sign-up" class="btn btn-primary btn-block me-2"
+          >Register</a
+        >
+        <a href="/users/sign-in" class="btn btn-primary btn-block me-2"
+          >Login</a
+        >
+        <%}%>
+      </div>
     </div>
   </div>
 </nav>
