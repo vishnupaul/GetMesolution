@@ -1,0 +1,17 @@
+<div
+  class="card border-primary m-1"
+  style="width: 20rem"
+  id="feedback-<%=feedback._id%>"
+>
+  <div class="d-flex card-header" style="justify-content: space-between">
+    <div><%= feedback.user.name %></div>
+    <% if(locals.user && locals.user.id == feedback.user.id){%>
+    <a class="delete-feedback-btn" href="/feedbacks/destory/<%= feedback.id %>">
+      <i class="fas fa-trash-alt"></i>
+    </a>
+    <%}%>
+  </div>
+  <div class="card-body">
+    <p class="card-text"><%= feedback.content %></p>
+  </div>
+</div>

@@ -7,6 +7,8 @@ console.log('router loaded');
 
 router.get('/', homeController.home);
 router.use('/users', require('./users'));
-router.use('/posts', require('./posts'));
+router.use('/feedbacks', require('./feedback'));
+router.use('/projects', require('./projects'));
+router.use('/api', require('./api'));
 
 module.exports = router;
